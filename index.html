@@ -364,6 +364,38 @@
             font-size: 1rem;
         }
     }
+
+    .experience-timeline {
+        position: relative;
+        padding-left: 2rem;
+    }
+
+    .experience-item {
+        margin-bottom: 2rem;
+        position: relative;
+    }
+
+    .experience-item::before {
+        content: '';
+        position: absolute;
+        left: -2rem;
+        top: 0;
+        width: 1px;
+        height: 100%;
+        background-color: var(--primary-color);
+    }
+
+    .experience-item::after {
+        content: '';
+        position: absolute;
+        left: -2.35rem;
+        top: 0.5rem;
+        width: 0.7rem;
+        height: 0.7rem;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+    }
+
    </style>
   </head>
   <body>
