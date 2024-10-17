@@ -1,439 +1,646 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Priyesh - Frontend Developer</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
     <style>
-        :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --accent-color: #e74c3c;
-            --text-color: #333;
-            --bg-color: #f4f4f4;
-            --card-bg: #ffffff;
-        }
+      :root {
+        --primary-color: #6366f1;
+        --primary-dark: #4f46e5;
+        --secondary-color: #10b981;
+        --accent-color: #f97316;
+        --text-color: #1f2937;
+        --bg-color: #f9fafb;
+        --card-bg: #ffffff;
+        --gradient-start: #6366f1;
+        --gradient-end: #8b5cf6;
+      }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-        }
+      body {
+        font-family: "Inter", sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--bg-color);
+      }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
 
-        header {
-            background-color: var(--primary-color);
-            color: #fff;
-            padding: 2rem 0;
-        }
+      header {
+        background: linear-gradient(
+          135deg,
+          var(--gradient-start),
+          var(--gradient-end)
+        );
+        color: #fff;
+        padding: 1rem 0;
+        position: fixed;
+        width: 100%;
+        z-index: 1000;
+      }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-        }
+      .logo {
+        font-size: 1.5rem;
+        font-weight: 700;
+      }
 
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-        }
+      .nav-links {
+        display: flex;
+        gap: 1.5rem;
+      }
 
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+      .nav-links a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
 
-        .nav-links a:hover {
-            color: var(--accent-color);
-        }
+      .nav-links a:hover {
+        color: var(--accent-color);
+      }
 
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 4rem 0;
-        }
+      .hero {
+        background: linear-gradient(
+          135deg,
+          var(--gradient-start),
+          var(--gradient-end)
+        );
+        color: #fff;
+        padding: 8rem 0 4rem;
+        position: relative;
+        overflow: hidden;
+      }
 
+      .hero::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="75" cy="25" r="40" fill="%23ffffff" fill-opacity="0.1"/><circle cx="25" cy="75" r="30" fill="%23ffffff" fill-opacity="0.1"/></svg>');
+        background-size: 50px 50px;
+        opacity: 0.1;
+      }
+
+      .hero-content {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        z-index: 1;
+      }
+
+      .hero-text {
+        flex: 1;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        line-height: 1.2;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        margin-bottom: 2rem;
+        max-width: 600px;
+      }
+
+      .cta-btn {
+        display: inline-block;
+        background-color: var(--accent-color);
+        color: #fff;
+        padding: 0.8rem 1.5rem;
+        border-radius: 5px;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+        font-weight: 600;
+      }
+
+      .cta-btn:hover {
+        background-color: #ea580c;
+      }
+
+      .hero-image {
+        flex: 1;
+        text-align: right;
+      }
+
+      .hero-image img {
+        max-width: 100%;
+        height: auto;
+        border-radius: 10px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      }
+
+      section {
+        padding: 6rem 0;
+      }
+
+      h2 {
+        font-size: 2.5rem;
+        margin-bottom: 2rem;
+        color: var(--primary-dark);
+        text-align: center;
+      }
+
+      .section-intro {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 3rem;
+      }
+
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .skill-card {
+        background-color: var(--card-bg);
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .skill-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .skill-card h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+      }
+
+      .skill-list {
+        list-style-type: none;
+      }
+
+      .skill-list li {
+        margin-bottom: 0.5rem;
+        display: flex;
+        align-items: center;
+      }
+
+      .skill-list li::before {
+        content: "\2022";
+        color: var(--secondary-color);
+        font-weight: bold;
+        display: inline-block;
+        width: 1em;
+        margin-right: 0.5em;
+      }
+
+      .experience-timeline {
+        position: relative;
+        padding-left: 2rem;
+      }
+
+      .experience-item {
+        margin-bottom: 3rem;
+        position: relative;
+        background-color: var(--card-bg);
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .experience-item::before {
+        content: "";
+        position: absolute;
+        left: -1rem;
+        top: 0;
+        width: 2px;
+        height: 100%;
+        background-color: var(--primary-color);
+      }
+
+      .experience-item::after {
+        content: "";
+        position: absolute;
+        left: -1.35rem;
+        top: 2rem;
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        background-color: var(--primary-color);
+      }
+
+      .experience-item h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+        color: var(--primary-color);
+      }
+
+      .experience-item p {
+        font-size: 1rem;
+        color: var(--text-color);
+        opacity: 0.8;
+        margin-bottom: 1rem;
+      }
+
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .project-card {
+        background-color: var(--card-bg);
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .project-image {
+        height: 200px;
+        background: linear-gradient(
+          135deg,
+          var(--gradient-start),
+          var(--gradient-end)
+        );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .project-image i {
+        font-size: 4rem;
+        color: #fff;
+      }
+
+      .project-content {
+        padding: 1.5rem;
+      }
+
+      .project-title {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+        color: var(--primary-color);
+      }
+
+      .project-tech {
+        font-size: 0.9rem;
+        color: var(--secondary-color);
+        margin-bottom: 1rem;
+      }
+
+      #contact {
+        background: linear-gradient(
+          135deg,
+          var(--gradient-start),
+          var(--gradient-end)
+        );
+        color: #fff;
+        padding: 6rem 0;
+      }
+
+      #contact h2 {
+        color: #fff;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+      }
+
+      .contact-item {
+        background-color: rgba(255, 255, 255, 0.1);
+        padding: 2rem;
+        border-radius: 10px;
+        text-align: center;
+        transition: transform 0.3s ease;
+      }
+
+      .contact-item:hover {
+        transform: translateY(-5px);
+      }
+
+      .contact-item i {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+
+      .contact-item h3 {
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .contact-item p,
+      .contact-item a {
+        color: #fff;
+        text-decoration: none;
+      }
+
+      .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 2rem;
+      }
+
+      .social-links a {
+        color: #fff;
+        font-size: 1.5rem;
+        transition: color 0.3s ease;
+        background-color: rgba(255, 255, 255, 0.1);
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+      }
+
+      .social-links a:hover {
+        color: var(--accent-color);
+      }
+
+      footer {
+        background-color: var(--primary-dark);
+        color: #fff;
+        padding: 2rem 0;
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
         .hero-content {
-            flex: 1;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-        }
-
-        .cta-btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: #fff;
-            padding: 0.8rem 1.5rem;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background-color 0.3s ease;
-        }
-
-        .cta-btn:hover {
-            background-color: #c0392b;
+          flex-direction: column;
+          text-align: center;
         }
 
         .hero-image {
-            flex: 1;
-            text-align: right;
+          margin-top: 2rem;
         }
 
-        .hero-image img {
-            max-width: 100%;
-            height: auto;
+        .nav-links {
+          display: none;
         }
 
-        section {
-            padding: 4rem 0;
+        .hero h1 {
+          font-size: 2.5rem;
         }
 
-        h2 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
-            color: var(--secondary-color);
+        .hero p {
+          font-size: 1rem;
         }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .skill-card {
-            background-color: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 5px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .skill-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .skill-list {
-            list-style-type: none;
-        }
-
-        .skill-list li {
-            margin-bottom: 0.5rem;
-        }
-
-        .experience-timeline {
-            position: relative;
-            padding-left: 2rem;
-        }
-
-        .experience-item {
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .experience-item::before {
-            content: '';
-            position: absolute;
-            left: -2rem;
-            top: 0;
-            width: 1px;
-            height: 100%;
-            background-color: var(--primary-color);
-        }
-
-        .experience-item::after {
-            content: '';
-            position: absolute;
-            left: -2.35rem;
-            top: 0.5rem;
-            width: 0.7rem;
-            height: 0.7rem;
-            border-radius: 50%;
-            background-color: var(--primary-color);
-        }
-
-        .project-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background-color: var(--card-bg);
-            border-radius: 5px;
-            overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .project-image {
-            height: 200px;
-            background-color: var(--primary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .project-image i {
-            font-size: 4rem;
-            color: #fff;
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .project-title {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-tech {
-            font-size: 0.9rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        footer {
-            background-color: var(--secondary-color);
-            color: #fff;
-            padding: 2rem 0;
-            text-align: center;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .social-links a {
-            color: #fff;
-            font-size: 1.5rem;
-            transition: color 0.3s ease;
-        }
-
-        .social-links a:hover {
-            color: var(--accent-color);
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-            }
-
-            .hero-image {
-                margin-top: 2rem;
-            }
-
-            .nav-links {
-                display: none;
-            }
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <div class="container">
-            <nav>
-                <div class="logo">Priyesh</div>
-                <div class="nav-links">
-                    <a href="#about">About</a>
-                    <a href="#skills">Skills</a>
-                    <a href="#experience">Experience</a>
-                    <a href="#projects">Projects</a>
-                    <a href="#contact">Contact</a>
-                </div>
-            </nav>
-        </div>
+      <div class="container">
+        <nav>
+          <div class="logo">Priyesh</div>
+          <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#experience">Experience</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+          </div>
+        </nav>
+      </div>
     </header>
 
     <main>
-        <section class="hero">
-            <div class="container">
-                <div class="hero-content">
-                    <h1>Priyesh</h1>
-                    <p>Frontend Developer specializing in React and Next.js</p>
-                    <a href="#contact" class="cta-btn">Get in Touch</a>
-                </div>
-                <div class="hero-image">
-                    <img src="/api/placeholder/400/400" alt="Priyesh - Frontend Developer">
-                </div>
-            </div>
-        </section>
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1>Frontend Developer specializing in React and Next.js</h1>
+            <a href="#contact" class="cta-btn">Get in Touch</a>
+          </div>
+          <div class="hero-image">
+            <img
+              src="/api/placeholder/400/400"
+              alt="Priyesh - Frontend Developer"
+            />
+          </div>
+        </div>
+      </section>
 
-        <section id="about">
-            <div class="container">
-                <h2>About Me</h2>
-                <p>Experienced Frontend Developer with 3.4 years of expertise in React.js and Next.js. Skilled in creating dynamic web applications, optimizing performance, and collaborating with cross-functional teams. Committed to delivering innovative solutions and staying abreast of industry trends.</p>
-            </div>
-        </section>
+      <section id="about">
+        <div class="container">
+          <h2>About Me</h2>
+          <p>
+            Experienced Frontend Developer with 3.4 years of expertise in
+            React.js and Next.js. Skilled in creating dynamic web applications,
+            optimizing performance, and collaborating with cross-functional
+            teams. Committed to delivering innovative solutions and staying
+            abreast of industry trends.
+          </p>
+        </div>
+      </section>
 
-        <section id="skills">
-            <div class="container">
-                <h2>Skills</h2>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <h3>Frontend</h3>
-                        <ul class="skill-list">
-                            <li>React.js</li>
-                            <li>Next.js</li>
-                            <li>JavaScript (ES6+)</li>
-                            <li>TypeScript</li>
-                            <li>HTML5 & CSS3</li>
-                        </ul>
-                    </div>
-                    <div class="skill-card">
-                        <h3>Backend</h3>
-                        <ul class="skill-list">
-                            <li>Node.js</li>
-                            <li>Express.js</li>
-                            <li>MongoDB</li>
-                            <li>Redis</li>
-                            <li>RESTful APIs</li>
-                        </ul>
-                    </div>
-                    <div class="skill-card">
-                        <h3>Tools & Others</h3>
-                        <ul class="skill-list">
-                            <li>Git & GitHub</li>
-                            <li>Docker</li>
-                            <li>AWS Cloud</li>
-                            <li>Agile Methodologies</li>
-                            <li>CI/CD</li>
-                        </ul>
-                    </div>
-                </div>
+      <section id="skills">
+        <div class="container">
+          <h2>Skills</h2>
+          <div class="skills-grid">
+            <div class="skill-card">
+              <h3>Frontend</h3>
+              <ul class="skill-list">
+                <li>React.js</li>
+                <li>Next.js</li>
+                <li>JavaScript (ES6+)</li>
+                <li>TypeScript</li>
+                <li>HTML5 & CSS3</li>
+              </ul>
             </div>
-        </section>
+            <div class="skill-card">
+              <h3>Backend</h3>
+              <ul class="skill-list">
+                <li>Node.js</li>
+                <li>Express.js</li>
+                <li>MongoDB</li>
+                <li>Redis</li>
+                <li>RESTful APIs</li>
+              </ul>
+            </div>
+            <div class="skill-card">
+              <h3>Tools & Others</h3>
+              <ul class="skill-list">
+                <li>Git & GitHub</li>
+                <li>Docker</li>
+                <li>AWS Cloud</li>
+                <li>Agile Methodologies</li>
+                <li>CI/CD</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section id="experience">
-            <div class="container">
-                <h2>Work Experience</h2>
-                <div class="experience-timeline">
-                    <div class="experience-item">
-                        <h3>Software Engineer</h3>
-                        <p>Logixal Solutions, Bangalore, IN</p>
-                        <p>Sept 2023 – Present</p>
-                        <ul>
-                            <li>Developed custom hooks for efficient logic sharing across components.</li>
-                            <li>Optimized application performance, addressing key metrics like LCP and CLS.</li>
-                            <li>Implemented and enhanced e-commerce features using Next.js and React.</li>
-                        </ul>
-                    </div>
-                    <div class="experience-item">
-                        <h3>Senior Software Engineer</h3>
-                        <p>JustDial, Bangalore, IN</p>
-                        <p>Feb 2022 – June 2023</p>
-                        <ul>
-                            <li>Leveraged Server-Side Rendering (SSR) to optimize web application load times.</li>
-                            <li>Implemented Redis for enhanced security and performance.</li>
-                            <li>Managed web application state using Redux Thunk and Redux Toolkit.</li>
-                        </ul>
-                    </div>
-                </div>
+      <section id="experience">
+        <div class="container">
+          <h2>Work Experience</h2>
+          <div class="experience-timeline">
+            <div class="experience-item">
+              <h3>Software Engineer</h3>
+              <p>Logixal Solutions, Bangalore, IN</p>
+              <p>Sept 2023 – Present</p>
+              <ul>
+                <li>
+                  Developed custom hooks for efficient logic sharing across
+                  components.
+                </li>
+                <li>
+                  Optimized application performance, addressing key metrics like
+                  LCP and CLS.
+                </li>
+                <li>
+                  Implemented and enhanced e-commerce features using Next.js and
+                  React.
+                </li>
+              </ul>
             </div>
-        </section>
+            <div class="experience-item">
+              <h3>Senior Software Engineer</h3>
+              <p>JustDial, Bangalore, IN</p>
+              <p>Feb 2022 – June 2023</p>
+              <ul>
+                <li>
+                  Leveraged Server-Side Rendering (SSR) to optimize web
+                  application load times.
+                </li>
+                <li>
+                  Implemented Redis for enhanced security and performance.
+                </li>
+                <li>
+                  Managed web application state using Redux Thunk and Redux
+                  Toolkit.
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section id="projects">
-            <div class="container">
-                <h2>Projects</h2>
-                <div class="project-grid">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i data-feather="shopping-cart"></i>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Motion.ai & Motion.com</h3>
-                            <p class="project-tech">Next.js, NX, Docker, Express.js</p>
-                            <p>Developed clean code using SOLID principles and TypeScript. Worked with Mono-repo (NX) setup & Docker.</p>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i data-feather="shopping-bag"></i>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">LCS E-Commerce & Admin</h3>
-                            <p class="project-tech">React.js, Next.js, Redux-Toolkit, Tailwind</p>
-                            <p>Built multiple E-commerce applications with a unified code base. Leveraged Next.js features for efficient hosting and backend integration.</p>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i data-feather="home"></i>
-                        </div>
-                        <div class="project-content">
-                            <h3 class="project-title">Justdial Realestate</h3>
-                            <p class="project-tech">React.js, Next.js, Redux-Toolkit, Material-UI</p>
-                            <p>Developed and maintained the front end using React and Next.js. Implemented Tinymce editor and CK editor 5 for content management.</p>
-                        </div>
-                    </div>
-                </div>
+      <section id="projects">
+        <div class="container">
+          <h2>Projects</h2>
+          <div class="project-grid">
+            <div class="project-card">
+              <div class="project-image">
+                <i data-feather="shopping-cart"></i>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Motion.ai & Motion.com</h3>
+                <p class="project-tech">Next.js, NX, Docker, Express.js</p>
+                <p>
+                  Developed clean code using SOLID principles and TypeScript.
+                  Worked with Mono-repo (NX) setup & Docker.
+                </p>
+              </div>
             </div>
-        </section>
+            <div class="project-card">
+              <div class="project-image">
+                <i data-feather="shopping-bag"></i>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">LCS E-Commerce & Admin</h3>
+                <p class="project-tech">
+                  React.js, Next.js, Redux-Toolkit, Tailwind
+                </p>
+                <p>
+                  Built multiple E-commerce applications with a unified code
+                  base. Leveraged Next.js features for efficient hosting and
+                  backend integration.
+                </p>
+              </div>
+            </div>
+            <div class="project-card">
+              <div class="project-image">
+                <i data-feather="home"></i>
+              </div>
+              <div class="project-content">
+                <h3 class="project-title">Justdial Realestate</h3>
+                <p class="project-tech">
+                  React.js, Next.js, Redux-Toolkit, Material-UI
+                </p>
+                <p>
+                  Developed and maintained the front end using React and
+                  Next.js. Implemented Tinymce editor and CK editor 5 for
+                  content management.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-        <section id="contact">
-            <div class="container">
-                <h2>Get in Touch</h2>
-                <p>Feel free to reach out for collaborations or just a friendly chat.</p>
-                <p>Email: priyeshnd555@gmail.com</p>
-                <p>Phone: +91 7019664512</p>
-                <div class="social-links">
-                    <a href="https://www.linkedin.com/in/priyesh-n-d-43b300196/" target="_blank" rel="noopener noreferrer"><i data-feather="linkedin"></i></a>
-                    <a href="https://github.com/Priyeshnd555" target="_blank" rel="noopener noreferrer"><i data-feather="github"></i></a>
-                    <a href="https://priyeshnd555.github.io" target="_blank" rel="noopener noreferrer"><i data-feather="globe"></i></a>
-                </div>
-            </div>
-        </section>
+      <section id="contact">
+        <div class="container">
+          <h2>Get in Touch</h2>
+          <p>
+            Feel free to reach out for collaborations or just a friendly chat.
+          </p>
+          <p>Email: priyeshnd555@gmail.com</p>
+          <p>Phone: +91 7019664512</p>
+          <div class="social-links">
+            <a
+              href="https://www.linkedin.com/in/priyesh-n-d-43b300196/"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i data-feather="linkedin"></i
+            ></a>
+            <a
+              href="https://github.com/Priyeshnd555"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i data-feather="github"></i
+            ></a>
+            <a
+              href="https://priyeshnd555.github.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              ><i data-feather="globe"></i
+            ></a>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer>
-        <div class="container">
-            <p>&copy; 2024 Priyesh. All rights reserved.</p>
-        </div>
+      <div class="container">
+        <p>&copy; 2024 Priyesh. All rights reserved.</p>
+      </div>
     </footer>
 
     <script>
-        feather.replace();
+      feather.replace();
     </script>
-</body>
+  </body>
 </html>
