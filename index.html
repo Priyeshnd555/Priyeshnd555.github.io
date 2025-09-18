@@ -4,11 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PRIYESH N D -  Mobile + Web Fullstack Developer</title>
-  <link rel="icon" type="image/svg+xml" href='data:image/svg+xml,
-  <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64">
-    <rect width="100%" height="100%" fill="%232e1065"/>
-    <text x="50%" y="50%" dominant-baseline="middle" text-anchor="middle" font-family="Orbitron, sans-serif" font-size="36" fill="%23facc15">PND</text>
-  </svg>'>
     <link
       href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Poppins:wght@300;400;600&display=swap"
       rel="stylesheet"
@@ -18,14 +13,14 @@
     <style>
       /* Midnight Serenity Palette */
       :root {
-        --primary-color: #4ECDC4; /* Ethereal Teal for accents */
-        --primary-dark: #008B8B; /* Darker Teal for hover effects */
-        --secondary-color: #B2DFDB; /* Muted, light teal for secondary text */
-        --accent-color: #F8B400; /* Warm Gold for headings and CTAs */
-        --accent-hover: #D49B00; /* A darker gold for hover effects */
-        --text-color: #E6E6E6; /* Light gray for main body text */
-        --bg-color: #0F1626; /* Deep Midnight Blue background */
-        --card-bg: #1B2943; /* Darker Blue-Gray for card backgrounds */
+        --primary-color: #4ECDC4;
+        --primary-dark: #008B8B;
+        --secondary-color: #B2DFDB;
+        --accent-color: #F8B400;
+        --accent-hover: #D49B00;
+        --text-color: #E6E6E6;
+        --bg-color: #0F1626;
+        --card-bg: #1B2943;
         --gradient-start: #1B2943;
         --gradient-end: #0F1626;
       }
@@ -42,18 +37,18 @@
         color: var(--text-color);
         background-color: var(--bg-color);
       }
-      
+
       body::after {
-          content: '';
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-image: radial-gradient(circle, rgba(78, 205, 196, 0.05) 1px, transparent 1px);
-          background-size: 50px 50px;
-          opacity: 0.2;
-          z-index: -1;
+        content: '';
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: radial-gradient(circle, rgba(78, 205, 196, 0.05) 1px, transparent 1px);
+        background-size: 50px 50px;
+        opacity: 0.2;
+        z-index: -1;
       }
 
       .container {
@@ -127,6 +122,22 @@
         transform-origin: bottom left;
       }
 
+      .social-links-header {
+        display: none; /* hidden on desktop */
+        gap: 1rem;
+      }
+
+      .social-links-header a {
+        color: var(--primary-color);
+        font-size: 1.5rem;
+        transition: transform 0.3s ease, color 0.3s ease;
+      }
+
+      .social-links-header a:hover {
+        transform: scale(1.1);
+        color: var(--accent-color);
+      }
+
       .hero {
         background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
         color: #fff;
@@ -147,7 +158,7 @@
         background-size: 20px 20px;
         animation: pulse 10s infinite;
       }
-      
+
       @keyframes pulse {
         0% { opacity: 0.5; }
         50% { opacity: 1; }
@@ -203,7 +214,7 @@
         background-color: var(--accent-hover);
         border-color: var(--accent-hover);
       }
-      
+
       section {
         padding: 6rem 0;
       }
@@ -227,7 +238,7 @@
         margin: 0.75rem auto 0;
         border-radius: 2px;
       }
-      
+
       #about p {
         text-align: center;
         max-width: 800px;
@@ -261,15 +272,15 @@
         font-size: 1rem;
         line-height: 1.7;
       }
-      
+
       .project-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 2rem;
       }
-      
+
       .project-content {
-          padding: 1.5rem;
+        padding: 1.5rem;
       }
 
       .project-title {
@@ -284,9 +295,9 @@
         margin-bottom: 1rem;
         font-style: italic;
       }
-      
+
       #contact {
-          background: var(--card-bg);
+        background: var(--card-bg);
       }
 
       #contact p {
@@ -302,77 +313,83 @@
         text-align: center;
         border-top: 1px solid var(--primary-color);
       }
-      
+
       .social-links {
-          display: flex;
-          justify-content: center;
-          gap: 1.5rem;
-          margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+        gap: 1.5rem;
+        margin-top: 2rem;
       }
 
       .social-links a {
-          color: #fff;
-          font-size: 1.8rem;
-          transition: transform 0.3s ease, color 0.3s ease;
+        color: #fff;
+        font-size: 1.8rem;
+        transition: transform 0.3s ease, color 0.3s ease;
       }
 
       .social-links a:hover {
-          transform: translateY(-5px) scale(1.1);
-          color: var(--primary-color);
+        transform: translateY(-5px) scale(1.1);
+        color: var(--primary-color);
       }
-      
+
       .experience-timeline {
-          position: relative;
-          padding-left: 2rem;
-          max-width: 800px;
-          margin: 0 auto;
+        position: relative;
+        padding-left: 2rem;
+        max-width: 800px;
+        margin: 0 auto;
       }
 
       .experience-item::before {
-          content: '';
-          position: absolute;
-          left: -2rem;
-          top: 0;
-          width: 2px;
-          height: 100%;
-          background-color: var(--primary-color);
+        content: '';
+        position: absolute;
+        left: -2rem;
+        top: 0;
+        width: 2px;
+        height: 100%;
+        background-color: var(--primary-color);
       }
+
       .experience-item::after {
-          content: '';
-          position: absolute;
-          left: -2.4rem;
-          top: 1.5rem;
-          width: 0.8rem;
-          height: 0.8rem;
-          border-radius: 50%;
-          background-color: var(--card-bg);
-          border: 2px solid var(--accent-color);
-          transition: transform 0.3s ease, background-color 0.3s ease;
+        content: '';
+        position: absolute;
+        left: -2.4rem;
+        top: 1.5rem;
+        width: 0.8rem;
+        height: 0.8rem;
+        border-radius: 50%;
+        background-color: var(--card-bg);
+        border: 2px solid var(--accent-color);
+        transition: transform 0.3s ease, background-color 0.3s ease;
       }
+
       .experience-item:hover::after {
-          transform: scale(1.3);
-          background-color: var(--accent-color);
+        transform: scale(1.3);
+        background-color: var(--accent-color);
       }
+
       .experience-item h3 {
         color: var(--primary-color);
         margin-bottom: 0.5rem;
       }
+
       .experience-item p {
         color: var(--secondary-color);
         font-size: 0.9rem;
         margin-bottom: 0.5rem;
       }
+
       .experience-item ul {
         list-style-type: none;
         padding-left: 0;
       }
+
       .experience-item li::before {
-          content: "⚡️";
-          display: inline-block;
-          width: 1em;
-          margin-right: 0.5em;
+        content: "⚡️";
+        display: inline-block;
+        width: 1em;
+        margin-right: 0.5em;
       }
-        
+
       @keyframes fadeInUp {
         from {
           opacity: 0;
@@ -383,7 +400,7 @@
           transform: translateY(0);
         }
       }
-      
+
       @media (max-width: 768px) {
         .hero h1 {
           font-size: 2.5rem;
@@ -394,14 +411,21 @@
         .nav-links {
           display: none;
         }
-        
         .logo {
-            font-size: 1.5rem;
-            text-shadow: none;
+          font-size: 1.5rem;
+          text-shadow: none;
         }
-        
         h2 {
-            font-size: 2rem;
+          font-size: 2rem;
+        }
+        nav {
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+        }
+        .social-links-header {
+          display: flex;
+          margin-top: 0.5rem;
         }
       }
     </style>
@@ -418,6 +442,11 @@
             <a href="#projects">My Work</a>
             <a href="#contact">Connect</a>
           </div>
+          <div class="social-links-header">
+            <a href="https://www.linkedin.com/in/priyesh-n-d-43b300196/" target="_blank" rel="noopener noreferrer"><i data-feather="linkedin"></i></a>
+            <a href="https://github.com/Priyeshnd555" target="_blank" rel="noopener noreferrer"><i data-feather="github"></i></a>
+            <a href="https://priyeshnd555.github.io" target="_blank" rel="noopener noreferrer"><i data-feather="globe"></i></a>
+          </div>
         </nav>
       </div>
     </header>
@@ -429,13 +458,14 @@
             <h1>Building software that just works, beautifully..</h1>
             <p>
               I build robust, high-performance software where every detail is perfected.
-              My standard is excellence; my product is quality that endures.
+              
             </p>
             <a href="#contact" class="cta-btn">Partner With My Expertise</a>
           </div>
         </div>
       </section>
 
+      <!-- Other sections remain unchanged -->
       <section id="about">
         <div class="container">
           <h2>My Philosophy</h2>
@@ -499,27 +529,21 @@
               <div class="project-content">
                 <h3 class="project-title">Motion.ai & Motion.com</h3>
                 <p class="project-tech">Next.js, NX, Docker, Express.js</p>
-                <p>
-                  Developed within a Mono-repo (NX) environment, focusing on clean code with SOLID principles and TypeScript for a scalable, maintainable system.
-                </p>
+                <p>Developed within a Mono-repo (NX) environment, focusing on clean code with SOLID principles and TypeScript for a scalable, maintainable system.</p>
               </div>
             </div>
             <div class="project-card">
               <div class="project-content">
                 <h3 class="project-title">LCS E-Commerce & Admin</h3>
                 <p class="project-tech">React.js, Next.js, Redux-Toolkit, Tailwind</p>
-                <p>
-                  Engineered multiple E-commerce platforms from a unified code base, leveraging advanced Next.js features for optimal performance and integration.
-                </p>
+                <p>Engineered multiple E-commerce platforms from a unified code base, leveraging advanced Next.js features for optimal performance and integration.</p>
               </div>
             </div>
             <div class="project-card">
               <div class="project-content">
                 <h3 class="project-title">Justdial Realestate</h3>
                 <p class="project-tech">React.js, Next.js, Redux-Toolkit, Material-UI</p>
-                <p>
-                  Developed and maintained the frontend architecture using React and Next.js, integrating advanced content editors for a rich user experience.
-                </p>
+                <p>Developed and maintained the frontend architecture using React and Next.js, integrating advanced content editors for a rich user experience.</p>
               </div>
             </div>
           </div>
@@ -533,7 +557,6 @@
             Lets connect on LinedIn: https://www.linkedin.com/in/priyesh-n-d-43b300196/
             I am always interested in collaborating on ambitious projects where quality and precision are paramount. 
             If you value expertly crafted software, let's discuss your vision.
-
           </p>
           <p>Email: priyeshnd555@gmail.com</p>
           <div class="social-links">
